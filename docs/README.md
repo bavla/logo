@@ -1,5 +1,7 @@
 # Docs
 
+[preprint](http://vlado.fmf.uni-lj.si/vlado/papers/ibm3mode.pdf)
+
   - 1997-Batagelj-Drawing space filling curves in Logo.pdf			      [PDF](./1997-Batagelj-Drawing space filling curves in Logo.pdf) 
   - 1997-Batagelj-Logo to Postscript.pdf					     ([PDF](./1997-Batagelj-Logo to Postscript.pdf))
   - 1999-Zaveršnik+Batagelj-MSWLogo and dynamic link libraries.pdf		     ([PDF](./1999-Zaveršnik+Batagelj-MSWLogo and dynamic link libraries.pdf))
