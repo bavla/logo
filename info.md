@@ -1,5 +1,5 @@
 # <img src="./docs/logo.png" width=80 alt="logo"/> Info
-
+<hr />
   - [FMSlogo](https://sourceforge.net/projects/fmslogo)
   - [Netlogo](https://www.netlogo.org/)
   - [Logo / RRT](http://www.educa.fmf.uni-lj.si/logo/si/RRT/default.htm)
@@ -9,6 +9,6 @@
   - Cynthia Solomon: [Logo Things](https://logothings.github.io/logothings/Home.html)
   - [LCSI](http://www.microworlds.com/support/logo-philosophy-papert.html)
   - [Scratch](https://scratch.mit.edu/)
-
+<hr />
 [logo](./README.md)
 
