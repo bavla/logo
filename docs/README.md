@@ -1,5 +1,8 @@
 # <img src="./logo.png" width=80 alt="logo"/> Docs
 
+  - 1986-Batagelj+Horvat+Pisanski-Logo_na_računalniku_Spectrum-SOLILCSI_Sinclair_Logo.pdf   ([PDF](./1986-Batagelj+Horvat+Pisanski-Logo_na_računalniku_Spectrum-SOLILCSI_Sinclair_Logo.pdf))
+  - 1987-Batagelj+Horvat+Pisanski-Logo_na_računalniku_Commodore_64.pdf   ([PDF](./1987-Batagelj+Horvat+Pisanski-Logo_na_računalniku_Commodore_64.pdf))
+  - 1988-Batagelj-Izpopolnimo_Logo_na_Mavrici.pdf   ([PDF](./1988-Batagelj-Izpopolnimo_Logo_na_Mavrici.pdf))
   - 1997-Batagelj-Drawing space filling curves in Logo	([PDF](./1997-Batagelj-Drawing_space_filling_curves_in_Logo.pdf)) 
   - 1997-Batagelj-Logo to Postscript ([PDF](./1997-Batagelj-Logo_to_Postscript.pdf))
   - 1999-Zaveršnik+Batagelj-MSWLogo and dynamic link libraries ([PDF](./1999-Zaveršnik+Batagelj-MSWLogo_and_dynamic_link_libraries.pdf))
