@@ -21,10 +21,10 @@
   - 1997-Batagelj: Logo to Postscript ([PDF](./1997-Batagelj-Logo_to_Postscript.pdf))
   - 1999-Zaveršnik, Batagelj: MSWLogo and dynamic link libraries ([PDF](./1999-Zaveršnik+Batagelj-MSWLogo_and_dynamic_link_libraries.pdf))
   - 2001-Batagelj: Logo to SVG	 ([PDF](./2001-Batagelj-Logo_to_SVG.pdf))
-  - 2003-Batagelj, Zaveršnik: Delavnica iz programskega jezika Netlogo / slides  ([PDF](./2003-Batagelj+Zaveršnik-Delavnica_iz_programskega_jezika_Netlogo-slides.pdf))
   - 2003-Batagelj, Zaveršnik: Logo to VRML / Eurologo	 ([PDF](./2003-Batagelj+Zaveršnik-Logo_to_VRML.pdf))
   - 2003-Batagelj, Zaveršnik: Logo to VRML / slides	 ([PDF](./2003-Batagelj+Zaveršnik-Logo_to_VRML-slides.pdf))
-  - 2003-Batagelj, Zaveršnik: Mravlje rešujejo probleme	  ([PDF](./2003-Batagelj+Zaveršnik-Mravlje_rešujejo_probleme.pdf))
+  - 2003-Batagelj, Zaveršnik: Mravlje rešujejo probleme	/ Mirk  ([PDF](./2003-Batagelj+Zaveršnik-Mravlje_rešujejo_probleme.pdf))
+  - 2003-Batagelj, Zaveršnik: Delavnica iz programskega jezika Netlogo / slides  ([PDF](./2003-Batagelj+Zaveršnik-Delavnica_iz_programskega_jezika_Netlogo-slides.pdf))
     
 [Cobiss: Batagelj logo](https://plus-legacy.cobiss.net/cobiss/si/sl/bib/search?q=batagelj+logo&db=cobib&mat=allmaterials)
 
