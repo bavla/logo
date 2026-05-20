@@ -9,6 +9,7 @@
   - [Logo Foundation](https://el.media.mit.edu/logo-foundation/index.html)
   - Cynthia Solomon: [Logo Things](https://logothings.github.io/logothings/Home.html)
   - [LCSI](http://www.microworlds.com/support/logo-philosophy-papert.html)
+  - [Scheme](https://groups.csail.mit.edu/mac/projects/scheme/)
   - [Scratch](https://scratch.mit.edu/)
 
 <hr />
