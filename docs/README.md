@@ -8,3 +8,5 @@
   - 2003-Batagelj+Zaveršnik-Logo to VRML.pdf				             ([PDF](./2003-Batagelj+Zaveršnik-Logo to VRML.pdf))
   - 2003-Batagelj+Zaveršnik-Logo to VRML_slides.pdf				     ([PDF](./2003-Batagelj+Zaveršnik-Logo to VRML_slides.pdf))
   - 2003-Batagelj+Zaveršnik-Mravlje rešujejo probleme.pdf			     ([PDF](./2003-Batagelj+Zaveršnik-Mravlje rešujejo probleme.pdf))
+
+[logo](../README.md)
