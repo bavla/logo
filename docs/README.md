@@ -1,6 +1,6 @@
 # Docs
 
-[preprint](http://vlado.fmf.uni-lj.si/vlado/papers/ibm3mode.pdf)
+[Logo](http://vlado.fmf.uni-lj.si/educa/logo/logo.htm)
 
   - 1997-Batagelj-Drawing space filling curves in Logo.pdf			      [PDF](./1997-Batagelj-Drawing space filling curves in Logo.pdf) 
   - 1997-Batagelj-Logo to Postscript.pdf					     ([PDF](./1997-Batagelj-Logo to Postscript.pdf))
