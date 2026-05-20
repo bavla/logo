@@ -1,12 +1,12 @@
 # <img src="./logo.png" width=80 alt="logo"/> Docs
 
-  - 1997-Batagelj-Drawing space filling curves in Logo.pdf			      [PDF](./1997-Batagelj-Drawing space filling curves in Logo.pdf) 
-  - 1997-Batagelj-Logo to Postscript.pdf					     ([PDF](./1997-Batagelj-Logo to Postscript.pdf))
-  - 1999-Zaveršnik+Batagelj-MSWLogo and dynamic link libraries.pdf		     ([PDF](./1999-Zaveršnik+Batagelj-MSWLogo and dynamic link libraries.pdf))
-  - 2001-Batagelj-Logo to SVG.pdf						     ([PDF](./2001-Batagelj-Logo_to_SVG.pdf))
-  - 2003-Batagelj+Zaveršnik-Delavnica iz programskega jezika Netlogo_slides.pdf      ([PDF](./2003-Batagelj+Zaveršnik-Delavnica iz programskega jezika Netlogo_slides.pdf))
-  - 2003-Batagelj+Zaveršnik-Logo to VRML.pdf				             ([PDF](./2003-Batagelj+Zaveršnik-Logo to VRML.pdf))
-  - 2003-Batagelj+Zaveršnik-Logo to VRML_slides.pdf				     ([PDF](./2003-Batagelj+Zaveršnik-Logo to VRML_slides.pdf))
-  - 2003-Batagelj+Zaveršnik-Mravlje rešujejo probleme.pdf			     ([PDF](./2003-Batagelj+Zaveršnik-Mravlje rešujejo probleme.pdf))
+  - 1997-Batagelj-Drawing space filling curves in Logo	([PDF](./1997-Batagelj-Drawing_space_filling_curves_in_Logo.pdf)) 
+  - 1997-Batagelj-Logo to Postscript ([PDF](./1997-Batagelj-Logo_to_Postscript.pdf))
+  - 1999-Zaveršnik+Batagelj-MSWLogo and dynamic link libraries ([PDF](./1999-Zaveršnik+Batagelj-MSWLogo_and_dynamic_link_libraries.pdf))
+  - 2001-Batagelj-Logo to SVG	 ([PDF](./2001-Batagelj-Logo_to_SVG.pdf))
+  - 2003-Batagelj+Zaveršnik-Delavnica iz programskega jezika Netlogo / slides  ([PDF](./2003-Batagelj+Zaveršnik-Delavnica_iz_programskega_jezika_Netlogo-slides.pdf))
+  - 2003-Batagelj+Zaveršnik-Logo to VRML	 ([PDF](./2003-Batagelj+Zaveršnik-Logo_to_VRML.pdf))
+  - 2003-Batagelj+Zaveršnik-Logo to VRML / slides	 ([PDF](./2003-Batagelj+Zaveršnik-Logo_to_VRML-slides.pdf))
+  - 2003-Batagelj+Zaveršnik-Mravlje rešujejo probleme	  ([PDF](./2003-Batagelj+Zaveršnik-Mravlje_rešujejo_probleme.pdf))
 
 [logo](../README.md)
