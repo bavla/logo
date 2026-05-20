@@ -25,5 +25,7 @@
   - 2003-Batagelj, Zaveršnik: Logo to VRML	 ([PDF](./2003-Batagelj+Zaveršnik-Logo_to_VRML.pdf))
   - 2003-Batagelj, Zaveršnik: Logo to VRML / slides	 ([PDF](./2003-Batagelj+Zaveršnik-Logo_to_VRML-slides.pdf))
   - 2003-Batagelj, Zaveršnik: Mravlje rešujejo probleme	  ([PDF](./2003-Batagelj+Zaveršnik-Mravlje_rešujejo_probleme.pdf))
+    
+[Cobiss: Batagelj logo](https://plus-legacy.cobiss.net/cobiss/si/sl/bib/search?q=batagelj+logo&db=cobib&mat=allmaterials)
 
 [logo](../README.md)
