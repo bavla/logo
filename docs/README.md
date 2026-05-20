@@ -1,4 +1,4 @@
-{{./logo.png}}
+{./logo.png}
 # Docs
 
 [Logo](http://vlado.fmf.uni-lj.si/educa/logo/logo.htm)
