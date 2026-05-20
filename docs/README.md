@@ -1,6 +1,6 @@
 # <img src="./logo.png" width=80 alt="logo"/> Docs
 
-
+<hr />
 
 
   - 1986-Batagelj, Pisanski, Horvat: Logo / Poletna šola računalništva ZOTK ([Cobiss](https://plus-legacy.cobiss.net/cobiss/si/sl/bib/8319321))
@@ -28,5 +28,7 @@
   - 2003-Batagelj, Zaveršnik: Delavnica iz programskega jezika Netlogo / slides  ([PDF](./2003-Batagelj+Zaveršnik-Delavnica_iz_programskega_jezika_Netlogo-slides.pdf))
     
 [Cobiss: Batagelj logo](https://plus-legacy.cobiss.net/cobiss/si/sl/bib/search?q=batagelj+logo&db=cobib&mat=allmaterials)
+
+<hr />
 
 [logo](../README.md)
