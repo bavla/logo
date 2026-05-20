@@ -1,4 +1,4 @@
-# <img src="./logo.png" width=80 alt="logo"/> Code
+# <img src="../docs/logo.png" width=80 alt="logo"/> Code
 
   - 
 
