@@ -19,6 +19,7 @@
   - 1993-Batagelj: PRFOKS - authoring system based on Logo / Eurologo   ([Cobiss](https://plus-legacy.cobiss.net/cobiss/si/sl/bib/8157529))
   - 1997-Batagelj: Drawing space filling curves in Logo	([PDF](./1997-Batagelj-Drawing_space_filling_curves_in_Logo.pdf)) 
   - 1997-Batagelj: Logo to Postscript ([PDF](./1997-Batagelj-Logo_to_Postscript.pdf))
+  - 1999-Zaveršnik, Batagelj: Networking in MSWLogo / Eurologo ([WWW](http://www.educa.fmf.uni-lj.si/logo/eurologo.99/))
   - 2001-Zaveršnik, Batagelj: MSWLogo and dynamic link libraries / Eurologo ([PDF](./2001-Zaveršnik+Batagelj-MSWLogo_and_dynamic_link_libraries.pdf))
   - 2001-Batagelj: Logo to SVG / Eurologo	 ([PDF](./2001-Batagelj-Logo_to_SVG.pdf))
   - 2003-Batagelj, Zaveršnik: Logo to VRML / Eurologo	 ([PDF](./2003-Batagelj+Zaveršnik-Logo_to_VRML.pdf))
