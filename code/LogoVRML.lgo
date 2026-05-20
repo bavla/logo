@@ -1,0 +1,463 @@
+; =================================================
+; krogla
+; =================================================
+
+; vrne koordinate tocke, ki je oddaljena :r enot od
+; trenutnega polozaja zelve (gledano v smeri zelve).
+
+to getPoint :r
+   forward :r
+   localMake "pos posXYZ
+   back :r
+   output :pos
+end
+
+; narise enega od stirikotnikov, s katerimi aproksimiramo kroglo
+; predpostavi, da je pero dvignjeno
+
+to slice :r :angle
+   localMake "i 0
+   repeat 180 / :angle [
+      downPitch :i
+      localMake "a getPoint :r
+      downPitch :angle
+      localMake "b getPoint :r
+      upPitch :angle
+      upPitch :i
+      rightRoll :angle
+      downPitch :i
+      localMake "d getPoint :r
+      downPitch :angle
+      localMake "c getPoint :r
+      upPitch :angle
+      upPitch :i
+      leftRoll :angle
+      localMake "s posXYZ
+      setPosXYZ :a
+      penDown
+      polyStart
+      setPosXYZ :b
+      setPosXYZ :c
+      setPosXYZ :d
+      setPosXYZ :a
+      polyEnd
+      penUp
+      setPosXYZ :s
+      make "i :i + :angle
+   ]
+end
+
+; glavni ukaz za risanje krogle v Logu.
+;    color = barva krogle
+;    r = polmer krogle
+;    n = stevilo oglisc (vecji n --> lepsa krogla, pocasnejse risanje)
+
+to sphere :color :r [:n 20]
+   localMake "penDown penDownP
+   penUp
+   setPenColor :color
+   repeat :n [
+      slice :r 360 / :n
+      rightRoll 360 / :n
+   ]
+   polyView
+   if :penDown [penDown]
+   if :VRMLp [.VRsphere :color :r posXYZ]
+end
+
+; =================================================
+; kvader
+; =================================================
+
+; pravokotnik s stranicama a in b
+; predpostavi, da je pero dvignjeno
+
+to rectangle :a :b
+   penDown
+   polyStart
+   forward :a  right 90
+   forward :b  right 90
+   forward :a  right 90
+   forward :b  right 90
+   polyEnd
+   penUp
+end
+
+; glavni ukaz za risanje kvadra v Logu.
+;    color: barva kvadra
+;    a, b, c: dolzine stranic (c je stranica v smeri zelve)
+
+to box :color :a :b :c
+   localMake "penDown penDownP
+   localMake "a2 :a / 2
+   localMake "b2 :b / 2
+   localMake "c2 :c / 2
+   penUp
+   setPenColor :color
+   back :c2  upPitch 90  back :b2  left 90  back :a2  rectangle :a :b
+   downPitch 90  forward :c  upPitch 90  rectangle :a :b
+   upPitch 90  forward :c  right 90
+   rectangle :b :c  forward :b  downPitch 90
+   rectangle :a :c  forward :a  downPitch 90
+   rectangle :b :c  forward :b  downPitch 90
+   rectangle :a :c  forward :a  downPitch 90
+   forward :b2  downPitch 90  forward :a2  right 90  forward :c2
+   polyView
+   if :penDown [penDown]
+   if :VRMLp [.VRbox :color :a :b :c posXYZ [0 0 0] 0]
+end
+
+; =================================================
+; stozec
+; =================================================
+
+; n-kotnik polmera r
+
+to polygon :n :r
+   downPitch 90
+   localMake "circ []
+   repeat :n [
+      make "circ lput getPoint :r :circ
+      left 360 / :n
+   ]
+   upPitch 90
+
+   localMake "pos posXYZ
+   setPosXYZ last :circ
+   penDown
+   polyStart
+   repeat :n [ setPosXYZ item repcount :circ ]
+   polyEnd
+   penUp
+   setPosXYZ :pos
+
+   output lput first :circ :circ
+end
+
+; glavni ukaz za risanje stozca
+;    n = stevilo oglisc na robu osnovne ploskve
+;    h = visina stozca
+;    r = polmer osnovne ploskve
+;    color = barva stozca
+
+to cone :color :h :r [:n 20]
+   localMake "penDown penDownP
+   penUp
+   setPenColor :color
+
+   back :h / 2
+   localMake "bot posXYZ
+   localMake "circ polygon :n :r
+
+   forward :h
+   localMake "top posXYZ
+
+   repeat :n [
+      penDown
+      polyStart
+      setPosXYZ item repcount :circ
+      setPosXYZ item repcount + 1 :circ
+      setPosXYZ :top
+      polyEnd
+      penUp
+   ]
+
+   back :h / 2
+   polyView
+   if :penDown [penDown]
+   if :VRMLp [.VRcone :color :bot :top :r]
+end
+
+; =================================================
+; odsekani stozec
+; =================================================
+
+; glavni ukaz za risanje odsekanega stozca
+;    n = stevilo oglisc na robu osnovne ploskve
+;    h = visina stozca
+;    r1 = polmer spodnje ploskve
+;    r2 = polmer zgornje ploskve
+;    color = barva stozca
+
+to cylinder :color :h :r1 [:r2 :r1] [:n 20]
+   localMake "penDown penDownP
+   penUp
+   setPenColor :color
+
+   back :h / 2
+   localMake "bot posXYZ
+   localMake "circ1 polygon :n :r1
+
+   forward :h
+   localMake "top posXYZ
+   localMake "circ2 polygon :n :r2
+
+   repeat :n [
+      setPosXYZ item repcount :circ1
+      penDown
+      polyStart
+      setPosXYZ item repcount + 1 :circ1
+      setPosXYZ item repcount + 1 :circ2
+      setPosXYZ item repcount :circ2
+      setPosXYZ item repcount :circ1
+      polyEnd
+      penUp
+   ]
+
+   setPosXYZ :bot
+   forward :h / 2
+   polyView
+   if :penDown [penDown]
+   if :VRMLp [.VRcylinder :color :bot :top :r1]
+end
+
+; =================================================
+
+to sceneStart :pic [:background [0 0 0]] [:eyePos [400 400 600]] [:eyeDir[0 0 0]] [:light [0 0 1000]]
+   setScreenColor :background
+   clearScreen
+   clearPalette
+
+;   ask -1 [setPosXYZ :eyePos]
+;   ask -2 [setPosXYZ :eyeDir]
+;   ask -3 [setPosXYZ :light]
+
+   make "unit 100
+   make "VRMLp "true
+   .VRhead :pic
+end
+
+to sceneEnd
+   .VRtail
+   make "VRMLp "false
+end
+
+; =================================================
+
+to VRinit
+   perspective
+   setScreenColor [0 0 0]
+   print "|Logo to VRML 1.0 loaded|
+   print "|  sceneStart "filename  - start picture|
+   print "|  sceneEnd              - end picture|
+   print "|  VRexit                - restore standard Logo|
+   make "VRMLp "false
+end
+
+to VRexit
+   window
+   make "redefp "true
+   erase [beginScene endScene VRhead VRtail VRinit]
+   make "redefp "false
+end
+
+; =================================================
+
+to .VRhead :pic
+   make ".wrl (word :pic ".wrl )
+   (print "|  VRML output:| :.wrl)
+   openWrite :.wrl  setWrite :.wrl
+   print "|#VRML V2.0 utf8|
+   print "
+   print "|WorldInfo {|
+   (print "|  title "| :.wrl "/ time "|"|)
+   print "|  info [|
+   print "|    "VR_Logo 1.0  Feb 14, 1998 / Feb 14, 1998",|
+   print "|    "(c)1998 Vladimir Batagelj",|
+   print "|    "University of Ljubljana, Slovenia",|
+   print "|    "http://vlado.fmf.uni-lj.si/"|
+   print "|  ]|
+   print "|}|
+end
+
+to .VRtail
+   print "|# EOF VRML ---|
+   close :.wrl
+   setWrite []
+end
+
+; =================================================
+
+; narise kroglo v VRML
+;    color = barva
+;    r = polmer
+;    pos = sredisce krogle
+
+to .VRsphere :color :r :pos
+   print "|Transform {|
+   (print
+      "|  translation|
+      (item 1 :pos) / :unit
+      (item 2 :pos) / :unit
+      (item 3 :pos) / :unit
+   )
+   print "|  children [|
+   print "|    Shape {|
+   print "|      appearance Appearance {|
+   print "|        material Material {|
+   (print
+      "|          emissiveColor|
+      (item 1 :color) / 255
+      (item 2 :color) / 255
+      (item 3 :color) / 255
+   )
+   print "|        }|
+   print "|      }|
+   print "|      geometry Sphere {|
+   (print
+      "|        radius|
+      :r / :unit
+   )
+   print "|      }|
+   print "|    }|
+   print "|  ]|
+   print "|}|
+   print "
+end
+
+; =================================================
+
+; narise kvader v VRML
+;    color = barva kvadra
+;    a, b, c = dolzine stranic
+;    pos = sredisce kvadra
+;    axis = os rotacije
+;    angle = kot rotacije
+
+to .VRbox :color :a :b :c :pos :axis :angle
+   print "|Transform {|
+   (print
+      "|  translation|
+      (item 1 :pos) / :unit
+      (item 2 :pos) / :unit
+      (item 3 :pos) / :unit
+   )
+   (print
+      "|  rotation|
+      :axis :angle
+   )
+   print "|  children [|
+   print "|    Shape {|
+   print "|      appearance Appearance {|
+   print "|        material Material {|
+   (print
+      "|          emissiveColor|
+      (item 1 :color) / 255
+      (item 2 :color) / 255
+      (item 3 :color) / 255
+   )
+   print "|        }|
+   print "|      }|
+   print "|      geometry Box {|
+   (print
+      "|        size|
+      :a / :unit
+      :b / :unit
+      :c / :unit
+   )
+   print "|      }|
+   print "|    }|
+   print "|  ]|
+   print "|}|
+   print "
+end
+
+; =================================================
+
+; narise stozec v VRML
+;    color = barva
+;    a = sredisce osnovne ploskve
+;    b = vrh stozca
+;    r = polmer osnovne ploskve
+
+to .VRcone :color :a :b :r
+   make "dx (item 1 :b) - (item 1 :a)
+   make "dy (item 2 :b) - (item 2 :a)
+   make "dz (item 3 :b) - (item 3 :a)
+   make "d sqrt (:dx * :dx + :dy * :dy + :dz * :dz)
+   print "|Transform {|
+   (print
+      "|  translation|
+      ((item 1 :b) + (item 1 :a)) / (2 * :unit)
+      ((item 2 :b) + (item 2 :a)) / (2 * :unit)
+      ((item 3 :b) + (item 3 :a)) / (2 * :unit)
+   )
+   (print
+      "|  rotation|
+      :dz 0 -:dx
+      ifelse :dz * :dz + :dx * :dx > 0.0000001
+         [form radArcCos (:dy / :d) 9 5] [0]
+   )
+   print "|  children [|
+   print "|    Shape {|
+   print "|      appearance Appearance {|
+   print "|        material Material {|
+   (print
+      "|          emissiveColor|
+      (item 1 :color) / 255
+      (item 2 :color) / 255
+      (item 3 :color) / 255
+   )
+   print "|        }|
+   print "|      }|
+   print "|      geometry Cone {|
+   (print "|        bottomRadius| :r / :unit )
+   (print "|        height| :d / :unit )
+   print "|      }|
+   print "|    }|
+   print "|  ]|
+   print "|}|
+   print "
+end
+
+; =================================================
+
+; narise valj v VRML
+;    color = barva
+;    a = sredisce spodnje ploskve
+;    b = sredisce zgornje ploskve
+;    r = polmer osnovne ploskve
+
+to .VRcylinder :color :a :b :r
+   make "dx (item 1 :b) - (item 1 :a)
+   make "dy (item 2 :b) - (item 2 :a)
+   make "dz (item 3 :b) - (item 3 :a)
+   make "d sqrt (:dx * :dx + :dy * :dy + :dz * :dz)
+   print "|Transform {|
+   (print
+      "|  translation|
+      ((item 1 :b) + (item 1 :a)) / (2 * :unit)
+      ((item 2 :b) + (item 2 :a)) / (2 * :unit)
+      ((item 3 :b) + (item 3 :a)) / (2 * :unit)
+   )
+   (print
+      "|  rotation|
+      :dz 0 -:dx
+      ifelse :dz * :dz + :dx * :dx > 0.0000001
+         [form radArcCos (:dy / :d) 9 5] [0]
+   )
+   print "|  children [|
+   print "|    Shape {|
+   print "|      appearance Appearance {|
+   print "|        material Material {|
+   (print
+      "|          emissiveColor|
+      (item 1 :color) / 255
+      (item 2 :color) / 255
+      (item 3 :color) / 255
+   )
+   print "|        }|
+   print "|      }|
+   print "|      geometry Cylinder {|
+   (print "|        radius| :r / :unit )
+   (print "|        height| :d / :unit )
+   print "|      }|
+   print "|    }|
+   print "|  ]|
+   print "|}|
+   print "
+end
+
+; =================================================
+
+VRinit
