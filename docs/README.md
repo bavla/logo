@@ -1,6 +1,4 @@
-<img src="./logo.png" width=80 alt="logo"/>
-
-# Docs
+# <img src="./logo.png" width=80 alt="logo"/> Docs
 
 [Logo](http://vlado.fmf.uni-lj.si/educa/logo/logo.htm)
 
