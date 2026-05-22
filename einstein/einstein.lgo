@@ -1,0 +1,62 @@
+; einstein.lgo
+; commands to support layout creation of einstein tillings 
+; Smith, David; Myers, Joseph Samuel; Kaplan, Craig S.; Goodman-Strauss, Chaim:
+; An aperiodic monotile. Combinatorial Theory (2024) Volume 4, Issue 1, #6
+; https://escholarship.org/uc/item/3317z9z9
+; https://fmslogo.sourceforge.io/manual/
+; by Vladimir Batagelj, May 21, 2026
+
+TO node :ij
+  make "i item 1 :ij  make "j item 2 :ij
+  make "sx MODULO :i 2  make "sy MODULO :j 2
+  make "y :j*:a
+  IFELSE :sx=:sy [ make "x 3*:i*:b ] [ make "x :b + 3*:i*:b ]
+  OP (list :blx+:x :bly+:y)
+END
+
+TO einsteinR :xy :d :c
+  pu  setpos :xy seth :d+90  fd :b  pd
+  BegShape :w :pc :c
+    fd :b  rt 60  fd :b
+    rt 90  fd :a  rt 60  fd :a  lt 90  fd :b
+    rt 60  fd 2*:b  rt 60  fd :b  rt 90  fd :a
+    lt 60  fd :a  rt 90  fd :b  lt 60  fd :b
+    rt 90  fd :a  rt 60  fd :a
+  EndShape [ setpos :xy ]  pu  setpos :xy  pd seth 0
+END
+
+TO einsteinL :xy :d :c
+  pu  setpos :xy  seth :d-90  fd :b  pd
+  BegShape :w :pc :c
+    fd :b  lt 60  fd :b
+    lt 90  fd :a  lt 60  fd :a  rt 90  fd :b
+    lt 60  fd 2*:b  lt 60  fd :b  lt 90  fd :a
+    rt 60  fd :a  lt 90  fd :b  rt 60  fd :b
+    lt 90  fd :a  lt 60  fd :a
+  EndShape [ setpos :xy ]  pu  setpos :xy  pd  seth 0
+END
+
+TO grid
+  make "sy "true  setpensize [1 1]
+  make "Mi INT (:trx - :blx)/:b/3  make "Mj INT (:try - :bly)/:a
+  (PR :Mi :Mj)
+  pu setpc [0 0 0]
+  for [j 0 :Mj 1] [
+    make "y :j*:a make "sx "true
+    for [i 0 :Mi 1] [
+      IFELSE :sx=:sy [ make "x 3*:i*:b seth 30] [ make "x :b + 3*:i*:b seth -30]
+      setpos (list :blx+:x :bly+:y) ; label "●  ; SETPIXEL [0 0 0]
+      pd fd 2*:b pu
+      IF NOT :sx=:sy [ setpos (list :blx+:x :bly+:y) seth 90 pd fd 2*:b pu]
+      setpos (list :blx+:x :bly+:y)  seth 90  label (se "|   | :i ", :j)
+      make "sx NOT :sx
+    ]
+    make "sy NOT :sy
+  ]
+END
+
+SETWRITE []
+PRINT "|einstein  loaded|
+PRINT "|  einsteinR :xy :d :c  - draw an einstein tile|
+PRINT "|  einsteinL :xy :d :c  - draw a mirror einstein tile|
+PRINT "|  grid                 - draw a hex grid|
