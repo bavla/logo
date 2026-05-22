@@ -9,7 +9,7 @@ Rešitev sem preizkusil v tolmaču [FMSlogo](../info.md).  Primer tlakovanja iz 
 
 <img src="./tillingXY.png" width=500 alt="einstein"/>
 
-sem opisal v programu [einsteinPS.lgo](../code/einsteinPS.lgo). V FMSlogu naprej naložimo (z izbiro load) knjžnico  [Logo2PS](https://github.com/bavla/logo/blob/main/code/Logo2PS.lgo) in nato še sam program einsteinPS.lgo. Sliko dobimo na zaslonu in na datoteki einstein.eps. To si lahko ogledamo v Acrobat readerju in shranimo v obliki [PDF]().
+sem opisal v programu [einsteinPS.lgo](../code/einsteinPS.lgo). V FMSlogu naprej naložimo (z izbiro load) knjžnico  [Logo2PS](https://github.com/bavla/logo/blob/main/code/Logo2PS.lgo) in nato še sam program einsteinPS.lgo. Sliko dobimo na zaslonu in na datoteki einstein.eps. To si lahko ogledamo v Acrobat readerju in shranimo v obliki [PDF](./einstein.pdf).
 
   - [Logo2Svg](Logo2Svg.lgo)
   - [Logo2VRML](LogoVRML.lgo)
