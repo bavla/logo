@@ -2,7 +2,7 @@
 
 <hr />
 
-  - [Logo2PS](logo2ps.lgo)
+  - [Logo2PS](Logo2PS.lgo)
   - [Logo2Svg](Logo2Svg.lgo)
   - [Logo2VRML](LogoVRML.lgo)
   - [Ferdinand in Logo](Ferdinand+Logo.zip)
