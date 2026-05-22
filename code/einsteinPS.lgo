@@ -1,4 +1,4 @@
-﻿; einstein.lgo
+﻿; einsteinPS.lgo
 ;
 ; Smith, David; Myers, Joseph Samuel; Kaplan, Craig S.; Goodman-Strauss, Chaim:
 ; An aperiodic monotile. Combinatorial Theory (2024) Volume 4, Issue 1, #6
@@ -6,23 +6,12 @@
 ; https://fmslogo.sourceforge.io/manual/  https://fmslogo.sourceforge.io/workshop/
 ; by Vladimir Batagelj, May 21, 2026
 
-
-TO einsteinC :i :j :c
-  pu  setpos list :i :j  rt 60  fd :a  pd
-  rt 120  fd :a  lt 90  fd :b  rt 60  fd :b
-  rt 90  fd :a  rt 60  fd :a  lt 90  fd :b
-  rt 60  fd 2*:b  rt 60  fd :b  rt 90  fd :a
-  lt 60  fd :a  rt 90  fd :b  lt 60  fd :b
-  rt 90  fd :a  pu
-  SetFloodColor :c
-  setpos list :i :j  fill  pd  seth 0  
-END
-
-TO testC
-  SetScreenColor [255 255 20]  setpensize [3 3]
-  setpc [000 000 255]  einsteinC 5 10 :tan 
-  setpc [255 000 000]  einsteinC 90 120 [100 162 64] 
-  seth 120  setpc [255 000 255]  einsteinC -90 -120 [144 113 208]
+TO node :ij
+  make "i item 1 :ij  make "j item 2 :ij
+  make "sx MODULO :i 2  make "sy MODULO :j 2
+  make "y :j*:a 
+  IFELSE :sx=:sy [ make "x 3*:i*:b ] [ make "x :b + 3*:i*:b ]
+  OP (list :blx+:x :bly+:y)   
 END
 
 TO einsteinR :xy :d :c
@@ -45,6 +34,25 @@ TO einsteinL :xy :d :c
     rt 60  fd :a  lt 90  fd :b  rt 60  fd :b
     lt 90  fd :a  lt 60  fd :a      
   EndShape [ setpos :xy ]  pu  setpos :xy  pd  seth 0  
+END
+
+TO grid
+  make "sy "true  setpensize [1 1]
+  make "Mi INT (:trx - :blx)/:b/3  make "Mj INT (:try - :bly)/:a
+  (PR :Mi :Mj)
+  pu setpc [0 0 0]
+  for [j 0 :Mj 1] [
+    make "y :j*:a make "sx "true
+    for [i 0 :Mi 1] [
+      IFELSE :sx=:sy [ make "x 3*:i*:b seth 30] [ make "x :b + 3*:i*:b seth -30]
+      setpos (list :blx+:x :bly+:y) ; label "●  ; SETPIXEL [0 0 0] 
+      pd fd 2*:b pu
+      IF NOT :sx=:sy [ setpos (list :blx+:x :bly+:y) seth 90 pd fd 2*:b pu] 
+      setpos (list :blx+:x :bly+:y)  seth 90  label (se "|   | :i ", :j)
+      make "sx NOT :sx
+    ]
+    make "sy NOT :sy
+  ] 
 END
 
 TO testT
@@ -82,16 +90,8 @@ TO testT
   einsteinR node [0 9] 240 :SB 
 END
 
-TO node :ij
-  make "i item 1 :ij  make "j item 2 :ij
-  make "sx MODULO :i 2  make "sy MODULO :j 2
-  make "y :j*:a 
-  IFELSE :sx=:sy [ make "x 3*:i*:b ] [ make "x :b + 3*:i*:b ]
-  OP (list :blx+:x :bly+:y)   
-END
-
 TO testeps
-  IF NOT definedp "psinit [PRINT "|Load  Logo2PS.LGO  first| STOP]
+  IF NOT definedp "psinit [PRINT "|Load  Logo2PS.lgo  first| STOP]
   cs
   BegPic "einstein
     SetScreenColor [255 255 255] 
@@ -104,37 +104,10 @@ cs make "w 3
 make "bl [-300 -300]  make "tr [300 300]
 make "blx item 1 :bl  make "bly item 2 :bl
 make "trx item 1 :tr  make "try item 2 :tr
-make "tan [255 149 119]
-make "LS [255 160 122]
-make "SB [135 206 250]
-make "LG [124 252   0]
+make "tan [255 149 119]  make "LS [255 160 122]
+make "SB  [135 206 250]  make "LG [124 252   0]
+make "L labelfont  setlabelfont (se (list first :L) 6 bf bf :L)
 make "a 30  make "v :a * sqrt 3  make "b :v / 3
-
-make "L labelfont
-; [[Arial] 24 0 0 400 0 0 0 1 0 0 0 0]
-make "LL (se (list first :L) 6 bf bf :L)
-; show :LL
-; [[Arial] 6 0 0 400 0 0 0 1 0 0 0 0]
-setlabelfont :LL
-
-TO grid
-  make "sy "true  setpensize [1 1]
-  make "Mi INT (:trx - :blx)/:b/3  make "Mj INT (:try - :bly)/:a
-  (PR :Mi :Mj)
-  pu setpc [0 0 0]
-  for [j 0 :Mj 1] [
-    make "y :j*:a make "sx "true
-    for [i 0 :Mi 1] [
-      IFELSE :sx=:sy [ make "x 3*:i*:b seth 30] [ make "x :b + 3*:i*:b seth -30]
-      setpos (list :blx+:x :bly+:y) ; label "●  ; SETPIXEL [0 0 0] 
-      pd fd 2*:b pu
-      IF NOT :sx=:sy [ setpos (list :blx+:x :bly+:y) seth 90 pd fd 2*:b pu] 
-      setpos (list :blx+:x :bly+:y)  seth 90  label (se "|   | :i ", :j)
-      make "sx NOT :sx
-    ]
-    make "sy NOT :sy
-  ] 
-END
 
 testeps
 
