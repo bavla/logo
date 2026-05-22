@@ -14,8 +14,8 @@ Skoraj enak program [einsteinSVG.lgo](../code/einsteinSVG.lgo) pa shrani sliko n
 
 Če ne želimo šestkotniške mreže, zakomentiramo (predenj postavimo podpičje ; ) ukaz  grid  v ukazu  testeps oziroma  testsvg.
 
-  * [Logo2PS](https://github.com/bavla/logo/blob/main/docs/1997-Batagelj-Logo_to_Postscript.pdf)
-  * [Logo2SVG](https://github.com/bavla/logo/blob/main/docs/2001-Batagelj-Logo_to_SVG.pdf)
+  * Batagelj V.: [Logo to Postscript](https://github.com/bavla/logo/blob/main/docs/1997-Batagelj-Logo_to_Postscript.pdf). Eurologo, 1997.
+  * Batagelj V.: [Logo to SVG](https://github.com/bavla/logo/blob/main/docs/2001-Batagelj-Logo_to_SVG.pdf). Eurologo, 2001.
    
 <hr />
 
