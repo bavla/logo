@@ -6,5 +6,7 @@ Logo language
   * [Documents](./docs/README.md)
   * [Code](./code/README.md)
   * Izobraževalna delavnica FMF - [Logo](http://vlado.fmf.uni-lj.si/educa/logo/logo.htm)
+  * [einstein](./einstein/README.md)
+
 
 <hr />
