@@ -1,0 +1,72 @@
+; einsteinEx1.lgo
+; Layout of the example tilling from
+; Smith, David; Myers, Joseph Samuel; Kaplan, Craig S.; Goodman-Strauss, Chaim:
+; An aperiodic monotile. Combinatorial Theory (2024) Volume 4, Issue 1, #6
+; https://escholarship.org/uc/item/3317z9z9
+; https://fmslogo.sourceforge.io/manual/
+; by Vladimir Batagelj, May 21, 2026
+;
+; load  einstein.lgo  first
+
+TO BegShape :w :pc :fc
+  setpensize (LIST :w :w)  setpencolor :pc  setfc :fc
+END
+
+TO EndShape :t
+  PU  RUN :t PD (FILL "true) PU
+END
+
+TO drawEx1
+  setpensize (list :w :w) make "pc [000 000 255]
+  einsteinR node [4 3]   0 :LG
+  einsteinR node [3 3]  60 :SB
+  einsteinR node [2 2]  60 :SB
+  einsteinR node [1 4] 120 :SB
+  einsteinL node [3 5]   0 :LS
+  einsteinR node [2 6] 180 :SB
+  einsteinR node [5 2] 120 :SB
+  einsteinR node [1 7] -60 :SB
+  einsteinR node [5 5] -60 :SB
+  einsteinR node [4 6]  60 :SB
+  einsteinR node [6 4] 180 :SB
+  einsteinR node [6 6] 180 :SB
+  einsteinR node [6 8] 180 :SB
+  einsteinR node [5 7]  60 :SB
+  einsteinL node [7 3] 120 :LS
+  einsteinR node [2 8]  60 :SB
+  einsteinR node [3 8]   0 :SB
+  einsteinR node [0 5]   0 :SB
+  einsteinR node [0 3] 240 :SB
+  einsteinR node [3 1] 180 :SB
+  einsteinR node [4 1] 240 :SB
+  einsteinR node [6 0]  60 :SB
+  einsteinR node [2 0] -60 :SB
+  einsteinR node [1 1] -60 :SB
+  einsteinL node [0 0] -120 :LS
+  einsteinR node [7 1] 180 :SB
+  einsteinR node [7 6] 240 :SB
+  einsteinR node [8 4] -60 :SB
+  einsteinR node [7 8] 120 :SB
+  einsteinR node [0 9] 240 :SB
+END
+
+TO runEx1
+  IF NOT definedp "grid [PRINT "|Load  einstein.lgo  first| STOP]
+  SETWRITE []
+  PRINT "|einsteinEx1 - example from "An aperiodic monotile" layout |
+  cs  SetScreenColor [255 255 255]
+  drawEx1
+  grid
+END
+
+cs make "w 3 ; line width
+make "bl [-300 -300]  make "tr [300 300] ; drawing window size
+make "blx item 1 :bl  make "bly item 2 :bl
+make "trx item 1 :tr  make "try item 2 :tr
+make "tan [255 149 119]  make "LS [255 160 122] ; colors
+make "SB  [135 206 250]  make "LG [124 252   0]
+make "L labelfont  setlabelfont (se (list first :L) 6 bf bf :L) ; font size
+make "a 30  make "v :a * sqrt 3  make "b :v / 3 ; grid sizes
+
+runEx1
+
