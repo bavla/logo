@@ -11,11 +11,11 @@ Rešitev sem preizkusil v tolmaču [FMSlogo](../info.md).  Primer tlakovanja iz 
 
 sem opisal v programu [einsteinEx1.lgo](../code/einsteinEx1.lgo). V FMSlogu naprej naložimo (z izbiro file/load) knjižnico  [einstein](https://github.com/bavla/logo/blob/main/code/einstein.lgo) in nato še sam program einsteinEx1.lgo. Sliko dobimo na zaslonu. 
 
-Dobljeno sliko lahko obenem tudi shranimo ali v obliki Postscript ali v obliki SVG. Za PS je to prikazano v programu [einsteinEx1PS.lgo](../code/einsteinEx1PS.lgo). Za prikaz, v FMSlogu naprej naložimo (z izbiro file/load) knjžnici  [Logo2PS](https://github.com/bavla/logo/blob/main/code/Logo2PS.lgo) in [einstein](https://github.com/bavla/logo/blob/main/code/einstein.lgo) ter nato še sam program einsteinEx1PS.lgo. Sliko dobimo na zaslonu in na datoteki einsteinEx1.eps. To si lahko ogledamo v Acrobat readerju in shranimo v obliki [PDF](./einsteinEx1.pdf).
+Dobljeno sliko lahko obenem tudi shranimo ali v obliki Postscript ali v obliki SVG. Za PS je to prikazano v programu [einsteinEx1PS.lgo](../code/einsteinEx1PS.lgo). Za prikaz, v FMSlogu naprej naložimo (z izbiro file/load) knjžnici  [Logo2PS](https://github.com/bavla/logo/blob/main/code/Logo2PS.lgo) in [einstein](https://github.com/bavla/logo/blob/main/code/einstein.lgo) ter nato še sam program einsteinEx1PS.lgo. Sliko dobimo na zaslonu in na datoteki einsteinEx1.eps. To si lahko ogledamo v Acrobat readerju in shranimo v obliki [PDF](./einsteinEx1g.pdf).
 
 Skoraj enak program [einsteinEx1SVG.lgo](../code/einsteinEx1SVG.lgo) pa shrani sliko na datoteko v obliki [SVG](./einsteinEx1.svg).
 
-Če ne želimo šestkotniške mreže, zakomentiramo (predenj postavimo podpičje ; ) ukaz  grid  v ukazu  drawPS oziroma  drawSVG.
+Če ne želimo šestkotniške mreže, zakomentiramo (predenj postavimo podpičje ; ) ukaz  grid  v ukazu  drawPS oziroma  drawSVG. [PDF](./einsteinEx1.pdf)
 
   * Batagelj V.: [Logo to Postscript](https://github.com/bavla/logo/blob/main/docs/1997-Batagelj-Logo_to_Postscript.pdf). Eurologo, 1997.
   * Batagelj V.: [Logo to SVG](https://github.com/bavla/logo/blob/main/docs/2001-Batagelj-Logo_to_SVG.pdf). Eurologo, 2001.
