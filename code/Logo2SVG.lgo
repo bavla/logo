@@ -1,4 +1,4 @@
-; Logo2SVG 1.0 - Logo to Scalable Vector Graphics 
+; Logo2SVG 1.2 - Logo to Scalable Vector Graphics 
 ; (c)1997,2001,2026 Vladimir Batagelj <vladimir.batagelj@uni-lj.si>
 ;              http://vlado.fmf.uni-lj.si
 ;   1.2    22. may 2026 SVG header xmlns and xmlns:xlink
@@ -142,7 +142,7 @@ TO SVGInit
   ]
 ; header
   SETWRITE []
-  PRINT "|Logo to SVG 1.1 loaded|
+  PRINT "|Logo to SVG 1.2 loaded|
   PRINT "|  BegPic "filename  - start picture|
   PRINT "|  EndPic            - end picture|
   PRINT "|  SVGExit           - restore standard Logo|
