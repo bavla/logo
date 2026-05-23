@@ -95,7 +95,7 @@ TO PSInit
       (PRINT "|/Helvetica| :.fs "selectfont ) ]]
   ]
 ; header
-  PRINT "|Logo to PostScript 1.1.b loaded|
+  PRINT "|Logo to PostScript 1.1.c loaded|
   PRINT "|  BegPic "filename  - start picture|
   PRINT "|  EndPic            - end picture|
   PRINT "|  PSExit            - restore standard Logo|
