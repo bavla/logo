@@ -15,7 +15,7 @@ Dobljeno sliko lahko obenem tudi shranimo ali v obliki Postscript ali v obliki S
 
 Skoraj enak program [einsteinEx1SVG.lgo](../code/einsteinEx1SVG.lgo) pa shrani sliko na datoteko v obliki [SVG](./einsteinEx1.svg).
 
-Če ne želimo šestkotniške mreže, zakomentiramo (predenj postavimo podpičje ; ) ukaz  grid  v ukazu  drawPS oziroma  drawSVG. [PDF](./einsteinEx1.pdf)
+Če ne želimo šestkotniške mreže, zakomentiramo (predenj postavimo podpičje ; ) ukaz  grid  v ukazu  runPS oziroma  runSVG. [PDF](./einsteinEx1.pdf)
 
   * Batagelj V.: [Logo to Postscript](https://github.com/bavla/logo/blob/main/docs/1997-Batagelj-Logo_to_Postscript.pdf). Eurologo, 1997.
   * Batagelj V.: [Logo to SVG](https://github.com/bavla/logo/blob/main/docs/2001-Batagelj-Logo_to_SVG.pdf). Eurologo, 2001.
