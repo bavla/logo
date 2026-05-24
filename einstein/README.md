@@ -7,7 +7,7 @@ V članku Smith, David; Myers, Joseph Samuel; Kaplan, Craig S.; Goodman-Strauss,
 
 Rešitev sem preizkusil v tolmaču [FMSlogo](../info.md).  Primer tlakovanja iz članka 
 
-<img src="./tillingXY.png" width=500 alt="einstein"/>
+<img src="./tilingXY.png" width=500 alt="einstein"/>
 
 sem opisal v programu [einsteinEx1.lgo](../code/einsteinEx1.lgo). V FMSlogu naprej naložimo (z izbiro file/load) knjižnico  [einstein](https://github.com/bavla/logo/blob/main/code/einstein.lgo) in nato še sam program einsteinEx1.lgo. Sliko dobimo na zaslonu. Pri sestavljanju opisa si lahko pomagamo s prikazom tlakovca einstein v [različnih legah](./einsteinTiles.pdf).
 
